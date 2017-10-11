@@ -108,3 +108,4 @@ ENV/
 unsaved_tests.ipynb
 structure_of_bot.*
 bot_token.json
+*.sqlite3
