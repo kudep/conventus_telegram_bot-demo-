@@ -1,10 +1,18 @@
 #!/bin/python3
 # -*- coding: utf-8 -*-
-
+import json
 __all__ = ["get_config"]
 
-TEST_BD = "./structure_of_bot.csv"
+TESTING_DB = "./testing_data.csv"
+USERS_DB = "./users_db.sqlite3"
+BOT_TOKEN = "./bot_token.json"
 
 def get_config():
-    params['TEST_BD'] = TEST_BD
+    params = {}
+    params['TESTING_DB'] = TESTING_DB
+    params['USERS_DB'] = USERS_DB
+    with open(BOT_TOKEN) as jsonf:
+        bot_token = json.load(jsonf)
+    params['BOT_TOKEN'] = bot_token['token']
+
     return params
